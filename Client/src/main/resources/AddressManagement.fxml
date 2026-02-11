@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddressManagement" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #f0f4f8;">
+    <!-- Заголовок -->
+    <VBox alignment="CENTER" spacing="10" layoutX="25.0" layoutY="20.0" prefWidth="750.0">
+        <Label text="Список адресов" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+
+        <!-- Поле для поиска -->
+        <HBox spacing="10" alignment="CENTER">
+            <TextField fx:id="searchField" promptText="Поиск" prefWidth="400.0" />
+            <Button text="Поиск" onAction="#handleSearch" />
+            <Button text="Сбросить" onAction="#clearSearch" />
+        </HBox>
+
+        <!-- Таблица адресов -->
+        <TableView fx:id="addressTable" prefHeight="400.0" prefWidth="700.0">
+            <columns>
+                <TableColumn fx:id="idColumn" prefWidth="100.0" text="ID" />
+                <TableColumn fx:id="countryColumn" prefWidth="200.0" text="Страна" />
+                <TableColumn fx:id="cityColumn" prefWidth="200.0" text="Город" />
+                <TableColumn fx:id="streetColumn" prefWidth="250.0" text="Улица" />
+            </columns>
+        </TableView>
+    </VBox>
+
+    <!-- Кнопка назад -->
+    <Button layoutX="25.0" layoutY="550.0" onAction="#goBack" text="Назад" style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 8 16;" />
+</AnchorPane>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ComboBox?>
+
+<?import javafx.scene.control.PasswordField?>
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #f0f4f8;" xmlns="http://javafx.com/javafx/17.0.13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.UserManagement">
+    <!-- Заголовок -->
+    <VBox alignment="CENTER" layoutX="50" layoutY="30" prefWidth="700.0" spacing="20">
+        <Label text="Управление пользователями" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+
+        <HBox alignment="CENTER" spacing="10">
+            <TextField fx:id="searchField" promptText="Поиск" prefWidth="400.0" />
+            <Button onAction="#handleSearch" text="Поиск" />
+            <Button onAction="#clearSearch" text="Сбросить" />
+        </HBox>
+
+        <!-- Таблица пользователей -->
+        <TableView fx:id="userTable" prefHeight="250.0" prefWidth="700.0">
+            <columns>
+                <TableColumn fx:id="idColumn" prefWidth="100.0" text="ID" />
+                <TableColumn fx:id="loginColumn" prefWidth="400.0" text="Логин" />
+                <TableColumn fx:id="roleColumn" prefWidth="200.0" text="Роль" />
+            </columns>
+        </TableView>
+
+        <!-- Кнопки управления -->
+        <HBox alignment="CENTER" spacing="10">
+            <TextField fx:id="loginField" promptText="Введите логин" />
+            <PasswordField fx:id="passwordField" promptText="Введите пароль" />
+            <ComboBox fx:id="roleComboBox" promptText="Роль" />
+            <Button onAction="#handleAddUser" text="Добавить" />
+            <Button onAction="#handleEditUser" text="Редактировать" />
+            <Button onAction="#handleDeleteUser" text="Удалить" />
+        </HBox>
+
+        <!-- Секция редактирования -->
+        <VBox fx:id="editSection" alignment="CENTER" managed="false" spacing="10"
+              style="-fx-background-color: #e8f4ff; -fx-padding: 10; -fx-border-color: #2196F3;
+      -fx-border-width: 2; -fx-border-radius: 5;" visible="false">
+            <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Редактирование пользователя" />
+            <PasswordField fx:id="editPasswordField" promptText="Введите новый пароль" />
+            <HBox alignment="CENTER" spacing="10">
+                <Button onAction="#handleSaveEdit" text="Сохранить" />
+                <Button onAction="#handleCancelEdit" text="Отмена" />
+            </HBox>
+        </VBox>
+    </VBox>
+
+    <!-- Кнопка назад -->
+    <Button layoutX="25.0" layoutY="550.0" onAction="#goBack" style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 8 16;" text="Назад" />
+</AnchorPane>
+
+

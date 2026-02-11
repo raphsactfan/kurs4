@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CategoryManagement" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #f0f4f8;">
+    <!-- Заголовок -->
+    <VBox alignment="CENTER" spacing="10" layoutX="25.0" layoutY="20.0" prefWidth="750.0">
+        <Label text="Управление категориями" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+
+        <!-- Поиск -->
+        <HBox spacing="10" alignment="CENTER">
+            <TextField fx:id="searchField" promptText="Поиск по названию категории" prefWidth="400.0" />
+            <Button text="Поиск" onAction="#handleSearch" />
+            <Button text="Сбросить" onAction="#clearSearch" />
+        </HBox>
+
+        <!-- Таблица категорий -->
+        <TableView fx:id="categoryTable" prefHeight="400.0" prefWidth="750.0">
+            <columns>
+                <TableColumn fx:id="idColumn" prefWidth="100.0" text="ID" />
+                <TableColumn fx:id="nameColumn" prefWidth="650.0" text="Название" />
+            </columns>
+        </TableView>
+
+        <!-- Поля ввода -->
+        <HBox spacing="10" alignment="CENTER">
+            <TextField fx:id="nameField" promptText="Название категории" prefWidth="400.0" />
+            <Button text="Добавить" onAction="#handleAddCategory" />
+            <Button text="Редактировать" onAction="#handleEditCategory" />
+            <Button text="Удалить" onAction="#handleDeleteCategory" />
+        </HBox>
+    </VBox>
+
+    <!-- Кнопка назад -->
+    <Button layoutX="25.0" layoutY="550.0" onAction="#goBack" text="Назад" style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 8 16;" />
+</AnchorPane>

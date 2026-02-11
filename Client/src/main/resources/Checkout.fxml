@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<VBox xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controllers.Checkout" spacing="20" alignment="CENTER" style="-fx-padding: 20; -fx-background-color: #f0f4f8;">
+
+
+    <!-- Заголовок -->
+    <Label text="Оформление заказа" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+    <!-- Поля ввода адреса -->
+    <GridPane hgap="10" vgap="10">
+        <Label text="Страна:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="countryField" promptText="Введите страну" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Город:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="cityField" promptText="Введите город" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Улица:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="streetField" promptText="Введите улицу" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <!-- Таблица выбранных товаров -->
+    <VBox spacing="10" alignment="CENTER">
+        <Label text="Выбранные товары:" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+        <VBox fx:id="productsPane" style="-fx-padding: 10; -fx-border-color: #ccc; -fx-border-width: 1; -fx-background-color: white;"/>
+    </VBox>
+
+    <!-- Чекбокс и ссылка -->
+    <HBox spacing="10" layoutX="20" layoutY="380">
+        <CheckBox fx:id="agreementCheckBox" text="Согласен с" />
+        <Hyperlink text="соглашением" onAction="#showAgreement"/>
+    </HBox>
+
+    <!-- Итоговая сумма -->
+    <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-padding: 10;">
+        <Label text="Итоговая сумма:" style="-fx-font-size: 18px;"/>
+        <Label fx:id="totalLabel" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    </HBox>
+
+    <!-- Кнопки управления -->
+    <HBox spacing="20" alignment="CENTER">
+        <Button text="Вернуться в корзину" onAction="#goBack" style="-fx-background-color: #2196F3; -fx-text-fill: white;"/>
+        <Button fx:id="submitOrderButton" text="Подтвердить заказ" onAction="#submitOrder" style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+
+    </HBox>
+</VBox>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="adminPagePane" prefHeight="350.0" prefWidth="400.0" style="-fx-background-color: #f0f4f8;" xmlns="http://javafx.com/javafx/17.0.13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AdminPage">
+
+    <VBox alignment="CENTER" layoutX="50" layoutY="50" prefHeight="486.0" prefWidth="300" spacing="20">
+        <Label fx:id="welcomeLabel" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #333;" />
+
+        <Button onAction="#openUserManagement" prefHeight="34.0" prefWidth="205.0" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 8 16;" text="Управление пользователями" />
+
+        <Button onAction="#openSupplierManagement" prefHeight="34.0" prefWidth="205.0" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 8 16;" text="Управление поставщиками" />
+
+        <Button onAction="#openAddressManagement" prefHeight="34.0" prefWidth="205.0" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 8 16;" text="Управление адресами" />
+
+        <Button onAction="#openCategoryManagement" prefHeight="34.0" prefWidth="205.0" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 8 16;" text="Управление категориями" />
+
+        <Button onAction="#openProductManagement" prefHeight="34.0" prefWidth="205.0" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 8 16;" text="Управление товарами" />
+
+        <Button onAction="#openOrderManagement" prefHeight="34.0" prefWidth="205.0" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 8 16;" text="Управление заказами" />
+
+        <Button onAction="#openStatisticsSelection" prefHeight="34.0" prefWidth="205.0" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 8 16;" text="Статистика" />
+
+        <Button onAction="#handleLogout" style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 8 16;" text="Выход" />
+    </VBox>
+</AnchorPane>

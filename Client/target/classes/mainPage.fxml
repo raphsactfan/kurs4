@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="mainPagePane" prefHeight="300.0" prefWidth="400.0" style="-fx-background-color: #f0f4f8;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.13" fx:controller="controllers.MainPage">
+
+    <VBox alignment="CENTER" layoutX="50.0" layoutY="35.0" prefHeight="250" prefWidth="300" spacing="20">
+        <Label fx:id="welcomeLabel" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #333;" />
+
+        <Button onAction="#openUserProfile" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 8 16;" text="Личный кабинет" />
+
+        <Button onAction="#openCatalog" prefHeight="34.0" prefWidth="125.0" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 8 16;" text="Каталог" />
+
+        <Button onAction="#openOrders" prefHeight="34.0" prefWidth="126.0" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 8 16;" text="Мои заказы" />
+
+        <Button onAction="#handleLogout" style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 8 16;" text="Выход" />
+    </VBox>
+</AnchorPane>
